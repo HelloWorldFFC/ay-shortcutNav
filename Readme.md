@@ -15,12 +15,12 @@
 
 `index.vue`的`script`加入如下部分：
 ```
-
+import tiled from '@/components/ay-shortcutNav/tiled.vue';
 import shortcutNav from '@/components/ay-shortcutNav/shortcutNav.vue';
 	export default {
 		components: {
 			shortcutNav,
-
+			tiled,
 		},
 		data() {
 			return {
@@ -123,6 +123,19 @@ import shortcutNav from '@/components/ay-shortcutNav/shortcutNav.vue';
 
 ```
 
+或
+`index.vue`的`template`加入如下部分：(二选一)
+```
+ <view class="content">
+ 	<view class="marginBottom-Theme">
+ 		<tiled :list="shortcutNavList" :hengNumber="2" @toDetailPage="toDetailPage" img_last="lgg"></tiled>
+ 	</view>
+ 	<tiled :list="shortcutNavList" :hengNumber="3" @toDetailPage="toDetailPage" backgroundColor="#BA55D3" nameColor="#fff"
+ 	 img_last="lg"></tiled>
+ 
+ </view>
+
+```
 
 
 `index.vue`的`style`加入如下部分：

@@ -1,22 +1,31 @@
 <template>
 	<view class="content">
 		<shortcutNav :list="shortcutNavList" :hengNumber="4" @toDetailPage="toDetailPage"></shortcutNav>
-			<view class="NavBox marginBottom-Theme">
-				<shortcutNav style="padding: 80upx 20upx 20upx 20upx;" :list="shortcutNavList_two" :hengNumber="4" :boxshadow="false"
-				 :borderRadius="false" @toDetailPage="toDetailPage"></shortcutNav>
-			</view>
+		<view class="NavBox marginBottom-Theme">
+			<shortcutNav style="padding: 80upx 20upx 20upx 20upx;" :list="shortcutNavList_two" :hengNumber="4" :boxshadow="false"
+			 :borderRadius="false" @toDetailPage="toDetailPage"></shortcutNav>
+		</view>
 
-			<shortcutNav :list="shortcutNavList.slice(0,3)" :hengNumber="3" :backgroundColor="navbackgroundColor" @toDetailPage="toDetailPage"></shortcutNav>
+		<view class="marginBottom-Theme">
+		<shortcutNav :list="shortcutNavList.slice(0,3)" :hengNumber="3" :backgroundColor="navbackgroundColor" @toDetailPage="toDetailPage"></shortcutNav>
+		</view>
+		
+		<view class="marginBottom-Theme">
+			<tiled :list="shortcutNavList" :hengNumber="2" @toDetailPage="toDetailPage" img_last="lgg"></tiled>
+		</view>
+		<tiled :list="shortcutNavList" :hengNumber="3" @toDetailPage="toDetailPage" backgroundColor="#BA55D3" nameColor="#fff"
+		 img_last="lg"></tiled>
 
 	</view>
 </template>
 
 <script>
+	import tiled from '@/components/ay-shortcutNav/tiled.vue';
 	import shortcutNav from '@/components/ay-shortcutNav/shortcutNav.vue';
 	export default {
 		components: {
 			shortcutNav,
-
+			tiled,
 		},
 		data() {
 			return {
@@ -107,6 +116,7 @@
 		width: 94%;
 		margin: 0upx 20upx;
 	}
+
 	.marginBottom-Theme {
 		margin-bottom: 20upx;
 	}
